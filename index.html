@@ -385,6 +385,30 @@
       line-height: 1.6;
     }
 
+    /* ── PROCESS ── */
+    .process-section {
+      padding: 80px 24px;
+      background: var(--bg);
+    }
+    .process-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: var(--gold-dim);
+      color: var(--gold-light);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       .btn { padding: 12px 18px; font-size: 14px; }
@@ -527,6 +551,37 @@
           </svg>
           <p class="service-name">עבודה נקייה ואסתטית</p>
           <p class="service-desc">הקפדה על ביצוע נקי, מוקפד וגימור אסתטי.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="process-inner">
+      <p class="section-label">איך אנחנו עובדים</p>
+      <h2 class="section-title">התהליך מולנו</h2>
+      <p class="section-intro">תהליך עבודה מסודר וברור — אתם יודעים בכל רגע באיזה שלב הפרויקט נמצא, מה הבא בתור ומתי.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="step-number">1</span>
+          <p class="service-name">אפיון והצעה</p>
+          <p class="service-desc">פגישה או שיחה להבנת צורכי הפרויקט, ובעקבותיה הצעת מחיר מפורטת וברורה — בלי הפתעות.</p>
+        </div>
+        <div class="service-card">
+          <span class="step-number">2</span>
+          <p class="service-name">תיאום לוחות זמנים</p>
+          <p class="service-desc">קביעת לוח זמנים מוסכם מראש — מועד התחלה, שלבי הביצוע ומועד הסיום — כך שהכול ידוע וברור מהיום הראשון.</p>
+        </div>
+        <div class="service-card">
+          <span class="step-number">3</span>
+          <p class="service-name">ביצוע ותקשורת שוטפת</p>
+          <p class="service-desc">איש קשר זמין לאורך כל הדרך, ועדכון שבועי על התקדמות העבודה והעמידה בלוח הזמנים.</p>
+        </div>
+        <div class="service-card">
+          <span class="step-number">4</span>
+          <p class="service-name">מסירה מסודרת</p>
+          <p class="service-desc">מסירת הפרויקט עם כל האישורים הנדרשים — אישור בודק או חברת חשמל — במצב נקי, מוקפד ומוכן לשימוש.</p>
         </div>
       </div>
     </div>
