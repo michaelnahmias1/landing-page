@@ -69,16 +69,16 @@
     }
 
     .hero-logo {
-      max-width: 340px;
-      width: 85%;
+      max-width: 410px;
+      width: 92%;
       margin-bottom: 8px;
       position: relative;
-      
+
     }
 
     .hero-title {
       margin-top: 16px;
-      font-size: clamp(18px, 3.5vw, 24px);
+      font-size: clamp(15px, 2.8vw, 20px);
       font-weight: 500;
       color: var(--text);
       letter-spacing: 0.05em;
@@ -92,10 +92,24 @@
     }
 
     .hero-desc {
-      max-width: 500px;
+      max-width: 560px;
       font-size: 16px;
       color: #aaa8b8;
       line-height: 1.75;
+    }
+
+    .hero-desc + .hero-desc {
+      margin-top: 16px;
+    }
+
+    /* כותרת "למה לעבוד איתנו" בתוך ה-hero */
+    .why-heading {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 4px;
     }
 
     /* ── CONTACT BUTTONS ── */
@@ -366,7 +380,8 @@
 
     .diff-inner {
       max-width: 900px;
-      margin: 0 auto;
+      width: 100%;
+      margin: 56px auto 0;
     }
 
     .section-intro {
@@ -424,8 +439,57 @@
     <p class="hero-title">קבלן ביצוע לפרויקטים בתחום החשמל</p>
     <div class="divider-line"></div>
     <p class="hero-desc">
-      עבודה לפי תקן, עמידה בלוחות זמנים ותקשורת שוטפת לאורך כל הפרויקט.
+      מחויבות זה הערך העליון שמאפיין אותנו בכל צעד בפרויקט — מחויבות לביצוע מושלם, לעמידה בזמנים ולמענה מקצועי לכל הצרכים של הפרויקט.
     </p>
+    <p class="hero-desc">
+      אנחנו עובדים בנאמנות, מקצועיות, מקפידים על עבודה אסתטית ונקייה ושואפים תמיד לרמה הגבוהה ביותר באיכות, בנראות ובשירות.
+    </p>
+
+    <!-- WHY WORK WITH US -->
+    <div class="diff-inner">
+      <p class="why-heading">למה לעבוד איתנו</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <!-- shield + check = standards / law compliance -->
+          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6l14 5v10c0 9-6 15-14 18-8-3-14-9-14-18V11l14-5z" stroke="#c9a84c" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M18 24l4.5 4.5L31 20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="service-name">עבודה לפי תקן</p>
+          <p class="service-desc">ביצוע בהתאם לחוק החשמל ולתקנים המחייבים — לפי הכללים, בלי קיצורי דרך.</p>
+        </div>
+        <div class="service-card">
+          <!-- clock = timelines -->
+          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="17" stroke="#c9a84c" stroke-width="1.8"/>
+            <path d="M24 14v10l7 4" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="service-name">עמידה בלוחות זמנים</p>
+          <p class="service-desc">לוח זמנים מוגדר מראש והתחייבות אליו לאורך כל הפרויקט.</p>
+        </div>
+        <div class="service-card">
+          <!-- chat bubble = professional response -->
+          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 12h32a2 2 0 012 2v18a2 2 0 01-2 2H20l-8 7v-7H8a2 2 0 01-2-2V14a2 2 0 012-2z" stroke="#c9a84c" stroke-width="1.8" stroke-linejoin="round"/>
+            <circle cx="17" cy="23" r="1.6" fill="#c9a84c"/>
+            <circle cx="24" cy="23" r="1.6" fill="#c9a84c"/>
+            <circle cx="31" cy="23" r="1.6" fill="#c9a84c"/>
+          </svg>
+          <p class="service-name">מענה מקצועי לכל צורך</p>
+          <p class="service-desc">ליווי מקצועי לכל צרכי הפרויקט, מתחילתו ועד המסירה.</p>
+        </div>
+        <div class="service-card">
+          <!-- sparkle = clean & aesthetic finish -->
+          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8l3.5 9.5L37 21l-9.5 3.5L24 34l-3.5-9.5L11 21l9.5-3.5L24 8z" stroke="#c9a84c" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M37 30l1.3 3.7L42 35l-3.7 1.3L37 40l-1.3-3.7L32 35l3.7-1.3L37 30z" stroke="#c9a84c" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+          <p class="service-name">עבודה נקייה ואסתטית</p>
+          <p class="service-desc">הקפדה על ביצוע נקי, מוקפד וגימור אסתטי.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="contact-buttons">
       <a class="btn btn-primary" href="tel:0509050861">📞 050-905-0861</a>
       <a class="btn btn-whatsapp" href="https://wa.me/972509050861" target="_blank">
@@ -503,86 +567,6 @@
           <path d="M8 22L4 26M40 22l4 4" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <p class="service-name">בתים פרטיים</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIFFERENTIATION -->
-  <section class="diff-section">
-    <div class="diff-inner">
-      <p class="section-label">למה לעבוד איתנו</p>
-      <h2 class="section-title">מה מבדל אותנו</h2>
-      <p class="section-intro">מחויבות היא הערך המוביל שלנו בכל צעד בפרויקט — לעבודה מקצועית ותקנית, לעמידה בלוחות זמנים ולמענה מקצועי לכל צורך.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <!-- shield + check = standards / law compliance -->
-          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 6l14 5v10c0 9-6 15-14 18-8-3-14-9-14-18V11l14-5z" stroke="#c9a84c" stroke-width="1.8" stroke-linejoin="round"/>
-            <path d="M18 24l4.5 4.5L31 20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <p class="service-name">עבודה לפי תקן</p>
-          <p class="service-desc">ביצוע בהתאם לחוק החשמל ולתקנים המחייבים — לפי הכללים, בלי קיצורי דרך.</p>
-        </div>
-        <div class="service-card">
-          <!-- clock = timelines -->
-          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="17" stroke="#c9a84c" stroke-width="1.8"/>
-            <path d="M24 14v10l7 4" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <p class="service-name">עמידה בלוחות זמנים</p>
-          <p class="service-desc">לוח זמנים מוגדר מראש והתחייבות אליו לאורך כל הפרויקט.</p>
-        </div>
-        <div class="service-card">
-          <!-- chat bubble = professional response -->
-          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 12h32a2 2 0 012 2v18a2 2 0 01-2 2H20l-8 7v-7H8a2 2 0 01-2-2V14a2 2 0 012-2z" stroke="#c9a84c" stroke-width="1.8" stroke-linejoin="round"/>
-            <circle cx="17" cy="23" r="1.6" fill="#c9a84c"/>
-            <circle cx="24" cy="23" r="1.6" fill="#c9a84c"/>
-            <circle cx="31" cy="23" r="1.6" fill="#c9a84c"/>
-          </svg>
-          <p class="service-name">מענה מקצועי לכל צורך</p>
-          <p class="service-desc">ליווי מקצועי לכל צרכי הפרויקט, מתחילתו ועד המסירה.</p>
-        </div>
-        <div class="service-card">
-          <!-- sparkle = clean & aesthetic finish -->
-          <svg class="service-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 8l3.5 9.5L37 21l-9.5 3.5L24 34l-3.5-9.5L11 21l9.5-3.5L24 8z" stroke="#c9a84c" stroke-width="1.8" stroke-linejoin="round"/>
-            <path d="M37 30l1.3 3.7L42 35l-3.7 1.3L37 40l-1.3-3.7L32 35l3.7-1.3L37 30z" stroke="#c9a84c" stroke-width="1.4" stroke-linejoin="round"/>
-          </svg>
-          <p class="service-name">עבודה נקייה ואסתטית</p>
-          <p class="service-desc">הקפדה על ביצוע נקי, מוקפד וגימור אסתטי.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process-section">
-    <div class="process-inner">
-      <p class="section-label">איך אנחנו עובדים</p>
-      <h2 class="section-title">התהליך מולנו</h2>
-      <p class="section-intro">תהליך עבודה מסודר וברור — אתם יודעים בכל רגע באיזה שלב הפרויקט נמצא, מה הבא בתור ומתי.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="step-number">1</span>
-          <p class="service-name">אפיון והצעה</p>
-          <p class="service-desc">פגישה או שיחה להבנת צורכי הפרויקט, ובעקבותיה הצעת מחיר מפורטת וברורה — בלי הפתעות.</p>
-        </div>
-        <div class="service-card">
-          <span class="step-number">2</span>
-          <p class="service-name">תיאום לוחות זמנים</p>
-          <p class="service-desc">קביעת לוח זמנים מוסכם מראש — מועד התחלה, שלבי הביצוע ומועד הסיום — כך שהכול ידוע וברור מהיום הראשון.</p>
-        </div>
-        <div class="service-card">
-          <span class="step-number">3</span>
-          <p class="service-name">ביצוע ותקשורת שוטפת</p>
-          <p class="service-desc">איש קשר זמין לאורך כל הדרך, ועדכון שבועי על התקדמות העבודה והעמידה בלוח הזמנים.</p>
-        </div>
-        <div class="service-card">
-          <span class="step-number">4</span>
-          <p class="service-name">מסירה מסודרת</p>
-          <p class="service-desc">מסירת הפרויקט עם כל האישורים הנדרשים — אישור בודק או חברת חשמל — במצב נקי, מוקפד ומוכן לשימוש.</p>
-        </div>
       </div>
     </div>
   </section>
