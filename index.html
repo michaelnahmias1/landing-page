@@ -818,6 +818,12 @@
     .album-nav:hover { background: rgba(201,168,76,0.8); }
     .album-nav.prev { left: 8px; direction: ltr; }
     .album-nav.next { right: 8px; direction: ltr; }
+    .album-counter {
+      position: absolute; top: 8px; left: 8px; z-index: 2;
+      color: #fff; font-size: 11px; line-height: 1;
+      background: rgba(0,0,0,0.55); padding: 4px 9px; border-radius: 20px;
+      pointer-events: none;
+    }
     .album-slides { display: flex; height: 100%; transition: none; }
     .album-slide { min-width: 100%; height: 100%; display: none; }
     .album-slide.active { display: block; }
