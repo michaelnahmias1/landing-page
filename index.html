@@ -432,6 +432,91 @@
       .btn { padding: 12px 18px; font-size: 14px; }
       .gallery-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── ALBUM CAROUSEL & LIGHTBOX ── */
+    .album { position: relative; overflow: hidden; height: 220px; background: var(--card); direction: ltr; }
+    .album-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.6); color: #fff; border: none;
+      width: 44px; height: 44px; border-radius: 50%; font-size: 22px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; z-index: 2; line-height: 1;
+    }
+    .album-nav:hover { background: rgba(201,168,76,0.8); }
+    .album-nav.prev { left: 8px; direction: ltr; }
+    .album-nav.next { right: 8px; direction: ltr; }
+    .album-counter {
+      position: absolute; top: 8px; left: 8px; z-index: 2;
+      color: #fff; font-size: 11px; line-height: 1;
+      background: rgba(0,0,0,0.55); padding: 4px 9px; border-radius: 20px;
+      pointer-events: none;
+    }
+    .album-slides { display: flex; height: 100%; transition: none; }
+    .album-slide { min-width: 100%; height: 100%; display: none; }
+    .album-slide.active { display: block; }
+    .album-slide img { width: 100%; height: 100%; object-fit: cover; display: block; image-orientation: from-image; cursor: zoom-in; }
+    .album-slide .project-placeholder { height: 100%; }
+    .album .album-dots {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 4px; z-index: 2;
+      max-width: 90%; overflow: hidden; flex-wrap: nowrap;
+    }
+
+    /* ── FULLSCREEN LIGHTBOX ── */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.94);
+      display: none; direction: ltr;
+    }
+    .lightbox.open { display: block; }
+    .lightbox-track {
+      display: flex; width: 100%; height: 100%;
+      overflow-x: auto; overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .lightbox-track::-webkit-scrollbar { display: none; }
+    .lightbox-slide {
+      width: 100%; min-width: 100%; max-width: 100%; height: 100%;
+      scroll-snap-align: center; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; box-sizing: border-box;
+      overflow: hidden;
+    }
+    .lightbox-slide img {
+      max-width: 100%; max-height: 100%;
+      object-fit: contain; image-orientation: from-image;
+      -webkit-user-select: none; user-select: none;
+    }
+    .lightbox-close {
+      position: absolute; top: 16px; left: 16px; z-index: 1002;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.25);
+      font-size: 20px; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(201,168,76,0.85); }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 1001;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(0,0,0,0.5); color: #fff; border: none;
+      font-size: 24px; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-nav:hover { background: rgba(201,168,76,0.8); }
+    .lightbox-nav.lb-prev { left: 12px; }
+    .lightbox-nav.lb-next { right: 12px; }
+    .lightbox-counter {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      z-index: 1001; color: #fff; font-size: 14px;
+      background: rgba(0,0,0,0.5); padding: 4px 12px; border-radius: 20px;
+    }
+    @media (max-width: 480px) {
+      .lightbox-nav { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -804,93 +889,6 @@
       <a class="btn btn-ghost" href="mailto:Eliyahuelbaz52@gmail.com">✉️ שלח מייל</a>
     </div>
   </section>
-
-
-  <style>
-    .album { position: relative; overflow: hidden; height: 220px; background: var(--card); direction: ltr; }
-    .album-nav {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.6); color: #fff; border: none;
-      width: 44px; height: 44px; border-radius: 50%; font-size: 22px;
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s; z-index: 2; line-height: 1;
-    }
-    .album-nav:hover { background: rgba(201,168,76,0.8); }
-    .album-nav.prev { left: 8px; direction: ltr; }
-    .album-nav.next { right: 8px; direction: ltr; }
-    .album-counter {
-      position: absolute; top: 8px; left: 8px; z-index: 2;
-      color: #fff; font-size: 11px; line-height: 1;
-      background: rgba(0,0,0,0.55); padding: 4px 9px; border-radius: 20px;
-      pointer-events: none;
-    }
-    .album-slides { display: flex; height: 100%; transition: none; }
-    .album-slide { min-width: 100%; height: 100%; display: none; }
-    .album-slide.active { display: block; }
-    .album-slide img { width: 100%; height: 100%; object-fit: cover; display: block; image-orientation: from-image; cursor: zoom-in; }
-    .album-slide .project-placeholder { height: 100%; }
-    .album .album-dots {
-      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 4px; z-index: 2;
-      max-width: 90%; overflow: hidden; flex-wrap: nowrap;
-    }
-
-    /* ── FULLSCREEN LIGHTBOX ── */
-    .lightbox {
-      position: fixed; inset: 0; z-index: 1000;
-      background: rgba(0,0,0,0.94);
-      display: none; direction: ltr;
-    }
-    .lightbox.open { display: block; }
-    .lightbox-track {
-      display: flex; width: 100%; height: 100%;
-      overflow-x: auto; overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .lightbox-track::-webkit-scrollbar { display: none; }
-    .lightbox-slide {
-      width: 100%; min-width: 100%; max-width: 100%; height: 100%;
-      scroll-snap-align: center; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px; box-sizing: border-box;
-      overflow: hidden;
-    }
-    .lightbox-slide img {
-      max-width: 100%; max-height: 100%;
-      object-fit: contain; image-orientation: from-image;
-      -webkit-user-select: none; user-select: none;
-    }
-    .lightbox-close {
-      position: absolute; top: 16px; left: 16px; z-index: 1002;
-      width: 44px; height: 44px; border-radius: 50%;
-      background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.25);
-      font-size: 20px; line-height: 1; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .lightbox-close:hover { background: rgba(201,168,76,0.85); }
-    .lightbox-nav {
-      position: absolute; top: 50%; transform: translateY(-50%); z-index: 1001;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: rgba(0,0,0,0.5); color: #fff; border: none;
-      font-size: 24px; line-height: 1; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .lightbox-nav:hover { background: rgba(201,168,76,0.8); }
-    .lightbox-nav.lb-prev { left: 12px; }
-    .lightbox-nav.lb-next { right: 12px; }
-    .lightbox-counter {
-      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
-      z-index: 1001; color: #fff; font-size: 14px;
-      background: rgba(0,0,0,0.5); padding: 4px 12px; border-radius: 20px;
-    }
-    @media (max-width: 480px) {
-      .lightbox-nav { display: none; }
-    }
-  </style>
 
   <script>
     function albumNav(id, dir) {
